@@ -1,1 +1,1 @@
-python track.py video.source="/home/demopc/Public/TDC/dataset/single/train/v4/1204633/video/1204633.mp4"
+python track.py video.source="/home/demopc/Public/TDC/dataset/single/test/debug/1204633/video/1204633.mp4"
