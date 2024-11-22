@@ -168,6 +168,9 @@ class HMR2_4dhuman(PHALP):
 class Human4DConfig(FullConfig):
     # override defaults if needed
     expand_bbox_shape: Optional[Tuple[int]] = (192,256)
+    # override below
+    detect_shots: bool = True
+    render: RenderConfig = field(default_factory=lambda: RenderConfig(colors="black"))
     pass
 
 cs = ConfigStore.instance()
@@ -176,7 +179,7 @@ cs.store(name="config", node=Human4DConfig)
 @hydra.main(version_base="1.2", config_name="config")
 def main(cfg: DictConfig) -> Optional[float]:
     """Main function for running the PHALP tracker."""
-    #cgf.video. = 
+
     phalp_tracker = HMR2_4dhuman(cfg)
 
     phalp_tracker.track()
